@@ -8,7 +8,9 @@ import {
   Text,
 } from "@tremor/react";
 import type { DeltaType } from "@tremor/react";
-import type { MetaFunction } from "@remix-run/node";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { getTranslation } from "~/utils/i18n";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,11 +19,20 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function loader({ request }: LoaderFunctionArgs) {
+  const t = await getTranslation(request);
+
+  return { exampleMessage: t.example };
+}
+
 export default function Index() {
+  const { exampleMessage } = useLoaderData<typeof loader>();
+
   return (
     <div>
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
         <h1 className="text-2xl text-blue-600">Welcome to Remix</h1>
+        <p>{exampleMessage}</p>
         <ul>
           <li>
             <a

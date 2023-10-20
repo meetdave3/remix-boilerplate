@@ -10,14 +10,15 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.17",
+    "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^1.0.6",
     "@remix-run/css-bundle": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
     "@remix-run/serve": "^2.1.0",
-    "@headlessui/tailwindcss": "^0.2.0",
-    "@headlessui/react": "1.7.17",
     "@tremor/react": "^3.9.2",
+    "accept-language-parser": "^1.5.0",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@remix-run/dev": "^2.1.0",
     "@remix-run/eslint-config": "^2.1.0",
+    "@types/accept-language-parser": "^1.5.5",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.16",
