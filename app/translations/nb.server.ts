@@ -1,3 +1,3 @@
 export default {
-  example: "Text på Norsk",
+  h1: "Hei! ",
 };
